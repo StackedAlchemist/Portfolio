@@ -1,0 +1,73 @@
+body {
+  background: radial-gradient(circle, #1a1a2e, #0f0f1a);
+  color: #eee;
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  padding: 100px 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+
+h1 {
+  color: #00ffc8;
+  text-shadow: 0 0 10px #00ffc880;
+}
+
+#spell-output {
+  font-size: 1.5rem;
+  margin: 30px 0;
+  min-height: 60px;
+  transition: all 0.3s ease;
+}
+
+button {
+  background: #00ffc8;
+  color: #0f0f1a;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00ffc880;
+  transition: transform 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00ffc8;
+}
+
+@keyframes summon {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotateX(90deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+  }
+}
+
+#spell-output.animate {
+  animation: summon 0.6s ease-out;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #00ffc8;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: particle-fade 0.8s ease-out forwards;
+}
+
+@keyframes particle-fade {
+  to {
+    transform: translateY(-40px) scale(0.5);
+    opacity: 0;
+  }
+}
